@@ -29,7 +29,7 @@ fi
 # 3. Проверка и установка компонентов
 if ! certbot plugins | grep -q "dns-duckdns"; then
     echo -e "${B_YELLOW}Установка необходимых компонентов...${NC}"
-    apt-get update -qq && apt-get install -y python3-pip -qq
+    apt-get update -qq && apt-get install -y certbot python3-pip -qq
     pip3 install -q certbot-dns-duckdns
 fi
 
